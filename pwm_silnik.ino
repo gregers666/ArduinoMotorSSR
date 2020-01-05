@@ -37,7 +37,7 @@ void loop() {
   //Serial.print("Minus:");Serial.println(minus);
   //Serial.print("Timer:");Serial.println(timer_zero);
   
-  if (wypelnienie == 0 && minus == HIGH && plus == LOW) { //start
+  if (wypelnienie == 0 && ((minus == HIGH && plus == LOW) || (minus == LOW && plus == HIGH))) { //start
     wypelnienie = wypelnienie + wyp_start;
     timer_zero = millis();
   }
